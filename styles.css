@@ -1,0 +1,23 @@
+body {
+    background-color: seashell;
+}
+
+main {
+    border: .5px solid black;
+    border-radius: 8px;
+    background-color: rgba(5, 99, 102, 0.342);
+    width: 19em;
+    height: 24em;
+}
+
+.clip-element {
+    height: 3em;
+    width: auto;
+    border: .5px solid black;
+    border-radius: .2em;
+    margin: 7px 10px;
+    padding: 0 8;
+    background-color: bisque;
+    /* INFO: min-width 300px, min-height 380px */
+    /* INFO: max-width 310px, max-height 385px */
+}
