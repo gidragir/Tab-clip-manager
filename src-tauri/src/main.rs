@@ -7,12 +7,14 @@ use tauri::{CustomMenuItem, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemT
 
 fn main() {
     // here `"quit".to_string()` defines the menu item id, and the second parameter is the menu item label.
-    let quit = CustomMenuItem::new("quit".to_string(), "Quit");
+    let open = CustomMenuItem::new("open".to_string(), "Open");
     let hide = CustomMenuItem::new("hide".to_string(), "Hide");
+    let quit = CustomMenuItem::new("quit".to_string(), "Quit");
     let tray_menu = SystemTrayMenu::new()
-        .add_item(quit)
-        .add_native_item(SystemTrayMenuItem::Separator)
-        .add_item(hide);
+    .add_item(open)
+    .add_item(hide)
+    .add_native_item(SystemTrayMenuItem::Separator)
+    .add_item(quit);
 
     tauri::Builder::default()
         .system_tray(SystemTray::new().with_menu(tray_menu))
@@ -39,12 +41,16 @@ fn main() {
                 println!("system tray received a double click");
             }
             SystemTrayEvent::MenuItemClick { id, .. } => match id.as_str() {
-                "quit" => {
-                    std::process::exit(0);
+                "open" => {
+                    let window = app.get_window("main").unwrap();
+                    window.show().unwrap();
                 }
                 "hide" => {
                     let window = app.get_window("main").unwrap();
                     window.hide().unwrap();
+                }
+                "quit" => {
+                    std::process::exit(0);
                 }
                 _ => {}
             },
