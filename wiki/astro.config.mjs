@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: "https://gidragir.github.io",
-	base: "/Tab-clip-manager",
+	base: "/Tab-clip-manager/wiki",
 	integrations: [
 		starlight({
 			title: 'My Docs',
