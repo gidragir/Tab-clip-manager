@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    @apply text-text_color;
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    border-radius: 8px;
+  }
+  .container {
+    box-shadow: var(--shadow);
+    width: 305px;
+    height: 400px;
+    padding: 0 10px;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .tab {
+    box-shadow: var(--shadow);
+  }
+  .clip-element {
+    box-shadow: var(--shadow);
+    height: 60px;
+    width: auto;
+    margin: 1px 1px 14px;
+    padding: 5px 8px 0;
+    /* INFO: min-width 300px, min-height 380px */
+    /* INFO: max-width 310px, max-height 385px */
+  }
+}

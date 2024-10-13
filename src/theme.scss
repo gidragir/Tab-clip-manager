@@ -1,0 +1,13 @@
+.light {
+  --background-main: #fae9e9;
+  --background-clip: #ffffff98;
+  --shadow: 0 0 1px 0 black, 0 1px 1px 1px #414141, 0 -1px 1px 1px #414141;
+  --text-color: black;
+}
+
+.dark {
+  --background-main: #1c2128;
+  --background-clip: #22272e;
+  --shadow: 0 0 1px 0 white, 0 1px 1px 1px #20284b, 0 -1px 1px 1px #20284b;
+  --text-color: #3d9dff;
+}
