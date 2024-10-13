@@ -25,7 +25,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BUILD_PATH: "wiki" # default value when not using subfolders
+  BUILD_PATH: "." # default value when not using subfolders
   # BUILD_PATH: subfolder
 
 jobs:
@@ -63,6 +63,9 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Set dir 'wiki'
+        id: cd-wiki
+        run: cd .\wiki\
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
