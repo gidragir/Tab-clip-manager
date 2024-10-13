@@ -57,6 +57,7 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
+        working-directory: ${{ env.BUILD_PATH }}  
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
