@@ -1,10 +1,7 @@
 use tauri::{
-    menu::{Menu, MenuEvent, MenuItem}, 
-    tray::TrayIconBuilder, 
-    App, 
-    AppHandle, 
-    Manager,
-    Error
+    menu::{Menu, MenuEvent, MenuItem},
+    tray::TrayIconBuilder,
+    App, AppHandle, Error, Manager,
 };
 
 pub fn setup_tray_menu(app: &mut App) -> Result<(), Error> {
