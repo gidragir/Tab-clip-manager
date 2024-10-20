@@ -27,8 +27,8 @@ pub fn on_menu_event(app: &AppHandle, event: MenuEvent) {
     match event.id.as_ref() {
         "open" => {
             let window = app.get_webview_window("Tab_Clip_Manager_main").unwrap();
-            let _ = window.show();
-            let _ = window.set_focus();
+            let _ = &window.show();
+            let _ = &window.set_focus();
         }
         "hide" => {
             app.get_webview_window("Tab_Clip_Manager_main")
@@ -38,8 +38,8 @@ pub fn on_menu_event(app: &AppHandle, event: MenuEvent) {
         }
         "settings" => {
             let window = app.get_webview_window("Tab_Clip_Manager_settings").unwrap();
-            let _ = window.show();
-            let _ = window.set_focus();
+            let _ = &window.show();
+            let _ = &window.set_focus();
         }
         "quit" => {
             app.exit(0);
