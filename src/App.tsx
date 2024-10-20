@@ -1,5 +1,5 @@
-import "./App.scss";
-import "./theme.scss"
+import "style/App.scss";
+import "style/theme.scss"
 
 
 
