@@ -12,12 +12,23 @@
   "app": {
     "windows": [
       {
+        "label": "Tab_Clip_Manager_main",
         "focus": true,
         "transparent": true,
         "width": 305,
         "height": 400,
         "resizable": false,
-        "alwaysOnTop": true
+        "alwaysOnTop": true,
+        "url": "index.html"
+      },
+      {
+        "label": "Tab_Clip_Manager_settings",
+        "title": "Tab Clip Manager settings",
+        "transparent": true,
+        "width": 400,
+        "height": 500,
+        "center": true,
+        "url": "settings.html"
       }
     ],
     "security": {
