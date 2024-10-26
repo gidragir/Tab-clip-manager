@@ -1,4 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useEffect, useState } from "react"
+import { listen } from "@tauri-apps/api/event"
+
 
 type Theme = "dark" | "light" | "system"
 
@@ -12,6 +14,7 @@ type ThemeProviderState = {
   theme: Theme
   setTheme: (theme: Theme) => void
 }
+type ThemeChange = {theme: Theme}
 
 const initialState: ThemeProviderState = {
   theme: "system",
@@ -26,6 +29,7 @@ export function ThemeProvider({
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
+
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )
@@ -35,17 +39,19 @@ export function ThemeProvider({
 
     root.classList.remove("light", "dark")
 
+    let newTheme = theme
     if (theme === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
         .matches
         ? "dark"
         : "light"
 
-      root.classList.add(systemTheme)
-      return
+      newTheme = systemTheme
     }
 
-    root.classList.add(theme)
+    root.classList.add(newTheme)
+
+    console.log(newTheme)
   }, [theme])
 
   const value = {
@@ -56,18 +62,14 @@ export function ThemeProvider({
     },
   }
 
+  
+  listen<ThemeChange>("theme-changed", (e) => {   
+    setTheme(e.payload.theme)
+  })
+
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
       {children}
     </ThemeProviderContext.Provider>
   )
-}
-
-export const useTheme = () => {
-  const context = useContext(ThemeProviderContext)
-
-  if (context === undefined)
-    throw new Error("useTheme must be used within a ThemeProvider")
-
-  return context
 }

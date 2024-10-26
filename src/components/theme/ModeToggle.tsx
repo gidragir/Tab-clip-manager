@@ -7,10 +7,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useTheme } from "@/components/theme/ThemeProvider"
+import { invoke } from "@tauri-apps/api/core"
+
+type Theme = "dark" | "light" | "system"
 
 export function ModeToggle() {
-  const { setTheme } = useTheme()
+  const toggleTheme = (newTheme: Theme) => {
+    invoke("change_theme", { theme: newTheme })
+  }
 
   return (
     <DropdownMenu>
@@ -22,13 +26,13 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem onClick={() => toggleTheme("light")}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem onClick={() => toggleTheme("dark")}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem onClick={() => toggleTheme("system")}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
