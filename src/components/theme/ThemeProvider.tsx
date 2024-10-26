@@ -14,7 +14,6 @@ type ThemeProviderState = {
   theme: Theme
   setTheme: (theme: Theme) => void
 }
-type ThemeChange = {theme: Theme}
 
 const initialState: ThemeProviderState = {
   theme: "system",
@@ -63,7 +62,7 @@ export function ThemeProvider({
   }
 
   
-  listen<ThemeChange>("theme-changed", (e) => {   
+  listen<ThemeProviderState>("theme-changed", (e) => {   
     setTheme(e.payload.theme)
   })
 

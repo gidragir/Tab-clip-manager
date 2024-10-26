@@ -7,13 +7,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { invoke } from "@tauri-apps/api/core"
+import { emit } from "@tauri-apps/api/event"
 
 type Theme = "dark" | "light" | "system"
 
 export function ModeToggle() {
   const toggleTheme = (newTheme: Theme) => {
-    invoke("change_theme", { theme: newTheme })
+    emit("theme-changed", { theme: newTheme })
   }
 
   return (
