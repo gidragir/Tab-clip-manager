@@ -49,8 +49,7 @@ export function ThemeProvider({
     }
 
     root.classList.add(newTheme)
-
-    console.log(newTheme)
+    localStorage.setItem(storageKey, newTheme)
   }, [theme])
 
   const value = {

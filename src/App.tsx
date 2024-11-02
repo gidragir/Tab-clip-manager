@@ -1,28 +1,54 @@
 import "@/style/App.scss"
+import { Button } from "./components/ui/button"
+import { Label } from "@/components/ui/label"
+import { Info, Ellipsis } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
-function App() {
+export default function App() {
 
   const elements: string[] = ["Text1", "Text2", "Text3", "Text4", "Text5", "Text6", "Text7", "Text8", "Text9", "Text10"]
-  const tabs: string[] = ["Text1", "Text2", "Text3", "Text4", "Text5"]
+  const tabs: (typeof Info)[] = [Info, Info, Info, Info, Info]
 
   return (
     <main className="container flex flex-col content-center text-center rounded-sm bg-bg_main">
-      <div className="flex flex-row pb-2">
-        {tabs.map(tab => (
-          <div className="w-10 h-10 mt-1 mr-3 rounded-sm tab bg-bg_clip">
-            <p>{tab}</p>
-          </div>
+      <div className="sticky flex flex-row gap-5 pb-2 justify-evenly top-1">
+        {tabs.map((tab, index) => (
+          <Button className="tab" variant="outline" size={"icon"} key={index}>
+            <Info />
+          </Button>
         ))}
       </div>
-      <div className="overflow-y-auto clip-elements text-start">
-        {elements.map(element => (
-          <div className="transition-all rounded-sm bg-bg_clip clip-element hover:shadow-sm hover:shadow-slate-500">
-            <p>{element}</p>
-          </div>
+
+      <div className="flex flex-col mt-2 overflow-y-auto clip-elements text-start">
+        {elements.map((element, index) => (
+
+          <DropdownMenu>
+            <div className="flex flex-row transition-all rounded-sm bg-bg_clip clip-element hover:shadow-sm hover:shadow-slate-500" key={index}>
+              <Label>
+                {element}
+              </Label>
+
+              <DropdownMenuTrigger asChild>
+                <Button className="w-1 h-1 ml-auto mr-0 right-2" variant="ghost">
+                  <Ellipsis />
+                </Button>
+              </DropdownMenuTrigger>
+            </div>
+
+
+            <DropdownMenuContent className="w-56">
+              <DropdownMenuItem>GitHub</DropdownMenuItem>
+              <DropdownMenuItem>Support</DropdownMenuItem>
+            </DropdownMenuContent>
+
+          </DropdownMenu>
         ))}
       </div>
     </main>
   )
 }
-
-export default App
