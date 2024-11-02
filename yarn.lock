@@ -850,6 +850,13 @@
     "@tauri-apps/cli-win32-ia32-msvc" "2.0.3"
     "@tauri-apps/cli-win32-x64-msvc" "2.0.3"
 
+"@tauri-apps/plugin-global-shortcut@~2":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@tauri-apps/plugin-global-shortcut/-/plugin-global-shortcut-2.0.0.tgz#f25a3ba6bc02872b287328980598d980d75f356c"
+  integrity sha512-pnB4CUwFVjg4twtBSxoLJ4uLFTYxsvOdC1zIbG581pYzhYatOl6mjB+ijD5SSXgiS/jNoqMcfkOF9PWAisurew==
+  dependencies:
+    "@tauri-apps/api" "^2.0.0"
+
 "@tauri-apps/plugin-shell@>=2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@tauri-apps/plugin-shell/-/plugin-shell-2.0.0.tgz#b6fc88ab070fd5f620e46405715779aa44eb8428"
