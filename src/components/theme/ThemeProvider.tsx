@@ -44,7 +44,6 @@ export function ThemeProvider({
         .matches
         ? "dark"
         : "light"
-
       newTheme = systemTheme
     }
 

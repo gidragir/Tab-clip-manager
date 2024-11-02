@@ -1,3 +1,4 @@
+import { load } from "@tauri-apps/plugin-store"
 import "@/style/App.scss"
 import { Button } from "./components/ui/button"
 import { Label } from "@/components/ui/label"
@@ -9,9 +10,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
+
+const elements_store = await load("elements.json", { autoSave: true })
+// await elements_store.set("group_1", { elements: ["Text1", "Text2", "Text3", "Text4", "Text5", "Text6", "Text7", "Text8", "Text9", "Text10"]})
+const group_1: {elements: string[]}| undefined = await elements_store.get<{elements: string[]}>('group_1')
+var elements: string[] | undefined = group_1?.elements
+await elements_store.save()
+
 export default function App() {
 
-  const elements: string[] = ["Text1", "Text2", "Text3", "Text4", "Text5", "Text6", "Text7", "Text8", "Text9", "Text10"]
   const tabs: (typeof Info)[] = [Info, Info, Info, Info, Info]
 
   return (
@@ -25,7 +32,7 @@ export default function App() {
       </div>
 
       <div className="flex flex-col mt-2 overflow-y-auto clip-elements text-start">
-        {elements.map((element, index) => (
+        {(Array.isArray(elements) ? elements.map((element, index) => (
 
           <DropdownMenu>
             <div className="flex flex-row transition-all rounded-sm bg-bg_clip clip-element hover:shadow-sm hover:shadow-slate-500" key={index}>
@@ -47,7 +54,8 @@ export default function App() {
             </DropdownMenuContent>
 
           </DropdownMenu>
-        ))}
+        ))
+        : [])}
       </div>
     </main>
   )
