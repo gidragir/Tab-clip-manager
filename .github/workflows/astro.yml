@@ -25,6 +25,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
+          cache: 'pnpm'
 
       - name: Install pnpm
         run: corepack enable && corepack prepare pnpm@latest --activate
@@ -37,8 +38,7 @@ jobs:
         uses: withastro/action@v3
         with:
           path: ./workspaces/wiki
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+          package-manager: pnpm@latest
 
   deploy:
     needs: build
