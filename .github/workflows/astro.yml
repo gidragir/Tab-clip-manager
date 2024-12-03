@@ -20,6 +20,20 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install pnpm
+        run: corepack enable && corepack prepare pnpm@latest --activate
+
+      - name: Install dependencies for wiki
+        working-directory: ./workspaces/wiki
+        run: pnpm install --frozen-lockfile
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
