@@ -19,7 +19,7 @@
         "height": 400,
         "resizable": false,
         "alwaysOnTop": true,
-        "url": "index.html"
+        "url": "src/windows/main/index.html"
       },
       {
         "label": "Tab_Clip_Manager_settings",
@@ -28,7 +28,7 @@
         "width": 400,
         "height": 500,
         "center": true,
-        "url": "settings.html"
+        "url": "src/windows/settings/index.html"
       }
     ],
     "security": {
