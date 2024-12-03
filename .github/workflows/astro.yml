@@ -35,7 +35,7 @@ jobs:
 
       - name: Install dependencies for wiki
         working-directory: ./workspaces/wiki
-        run: pnpm install
+        run: pnpm --filter wiki deploy
 
       - name: Install, build, and upload your site
         uses: withastro/action@v3
