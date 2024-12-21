@@ -32,22 +32,22 @@ importers:
         specifier: ^1.1.4
         version: 1.1.4(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tauri-apps/api':
-        specifier: '>=2.1.1'
+        specifier: ^2.1.1
         version: 2.1.1
       '@tauri-apps/plugin-clipboard-manager':
         specifier: ^2.0.1
         version: 2.0.1
       '@tauri-apps/plugin-global-shortcut':
-        specifier: ~2
+        specifier: ~2.0.0
         version: 2.0.0
       '@tauri-apps/plugin-shell':
-        specifier: '>=2.0.1'
+        specifier: ^2.0.1
         version: 2.0.1
       '@tauri-apps/plugin-store':
         specifier: ^2.1.0
         version: 2.1.0
       class-variance-authority:
-        specifier: ^0.7.0
+        specifier: ^0.7.1
         version: 0.7.1
       clsx:
         specifier: ^2.1.1
@@ -63,10 +63,10 @@ importers:
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@tailwindcss/nesting':
-        specifier: ^0.0.0-insiders.565cd3e
+        specifier: 0.0.0-insiders.565cd3e
         version: 0.0.0-insiders.565cd3e(postcss@8.4.49)
       '@tauri-apps/cli':
-        specifier: '>=2.1.0'
+        specifier: ^2.1.0
         version: 2.1.0
       '@types/node':
         specifier: ^22.10.1
@@ -99,7 +99,7 @@ importers:
         specifier: ^13.0.1
         version: 13.0.1(postcss@8.4.49)
       sass-embedded:
-        specifier: ^1.81.0
+        specifier: ^1.81.1
         version: 1.81.1
       tailwind-merge:
         specifier: ^2.5.5
