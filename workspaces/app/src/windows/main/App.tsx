@@ -14,7 +14,7 @@ import {
 const elements_store = await load("elements.json", { autoSave: true })
 // await elements_store.set("group_1", { elements: ["Text1", "Text2", "Text3", "Text4", "Text5", "Text6", "Text7", "Text8", "Text9", "Text10"]})
 const group_1: {elements: string[]}| undefined = await elements_store.get<{elements: string[]}>('group_1')
-var elements: string[] | undefined = group_1?.elements
+const elements: string[] | undefined = group_1?.elements
 await elements_store.save()
 
 export default function App() {
@@ -34,7 +34,7 @@ export default function App() {
       <div className="flex flex-col mt-2 overflow-y-auto clip-elements text-start">
         {(Array.isArray(elements) ? elements.map((element, index) => (
 
-          <DropdownMenu>
+          <DropdownMenu key={index}>
             <div className="flex flex-row transition-all rounded-sm bg-bg_clip clip-element hover:shadow-sm hover:shadow-slate-500" key={index}>
               <Label>
                 {element}

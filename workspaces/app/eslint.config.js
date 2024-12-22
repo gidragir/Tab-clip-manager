@@ -9,7 +9,7 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { ignores: ["node_modules/", ".git/", "**/target/"] },
+  { ignores: ["node_modules/", ".git/", "**/target/", "*.config.*"] },
   { languageOptions: { globals: globals.browser } },
   {
     rules: {

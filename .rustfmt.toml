@@ -1,0 +1,17 @@
+max_width = 100
+
+edition = "2024"
+
+disable_all_formatting = false
+
+brace_style = "SameLineWhere"
+control_brace_style = "AlwaysSameLine"
+
+tab_spaces = 4
+hard_tabs = false
+
+format_strings = true
+wrap_comments = true
+
+imports_granularity = "Crate"
+group_imports = "StdExternalCrate"
