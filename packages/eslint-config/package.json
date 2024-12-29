@@ -1,0 +1,9 @@
+{
+  "name": "@repo/eslint-config",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-turbo": "^2.0.0"
+  }
+}
