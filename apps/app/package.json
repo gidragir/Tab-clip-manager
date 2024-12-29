@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "tauri dev"
+    "dev": "vite"
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
@@ -23,7 +23,6 @@
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
-    "@tauri-apps/cli": "^2.1.0",
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
