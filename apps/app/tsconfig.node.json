@@ -1,10 +1,12 @@
 {
-  "extends": "@repo/typescript-config/base.node.json",
+  "extends": "@repo/configs/typescript.node.config",
   "compilerOptions": {
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@repo/ui/*": ["../../packages/ui/*"],
+      "@repo/ui/theme": ["../../packages/ui/theme.scss"]
     }
   },
   "include": ["vite.config.ts"]

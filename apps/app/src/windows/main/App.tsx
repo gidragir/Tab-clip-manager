@@ -1,14 +1,14 @@
 import { load } from "@tauri-apps/plugin-store"
 import "@/style/App.scss"
-import { Button } from "@/components/ui/button.tsx"
-import { Label } from "@/components/ui/label.tsx"
+import { Button } from "@repo/ui/components/button"
+import { Label } from "@repo/ui/components/label"
 import { Info, Ellipsis } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu.tsx"
+} from "@repo/ui/components/dropdown-menu"
 
 
 const elements_store = await load("elements.json", { autoSave: true })

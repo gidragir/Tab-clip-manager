@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
   :root {
     color: var(--text-color);
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -16,18 +23,18 @@
     width: 305px;
     height: 400px;
     padding: 0 10px;
-    
+
   }
   .tab {
     box-shadow: var(--shadow) !important;
   }
   .clip-elements {
-    
+
     &::-webkit-scrollbar {
       display: none;
     }
   }
-  
+
   .clip-element {
     box-shadow: var(--shadow);
     width: auto;
@@ -35,14 +42,5 @@
     padding: 10px 8px 35px;
     /* INFO: min-width 300px, min-height 380px */
     /* INFO: max-width 310px, max-height 385px */
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

@@ -1,6 +1,6 @@
 import "@/style/App.scss"
 import { ModeToggle } from "@/components/theme/ModeToggle"
-import { SidebarProvider } from "@/components/ui/sidebar.tsx"
+import { SidebarProvider } from "@repo/ui/components/sidebar.tsx"
 import { Home, Keyboard } from "lucide-react"
 import {
   Sidebar,
@@ -11,7 +11,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem
-} from "@/components/ui/sidebar.tsx"
+} from "@repo/ui/components/sidebar.tsx"
 
 // Menu items.
 const items = [

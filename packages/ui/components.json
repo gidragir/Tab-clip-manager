@@ -5,16 +5,17 @@
   "tsx": true,
   "tailwind": {
     "config": "tailwind.config.ts",
-    "css": "src/style.scss",
-    "baseColor": "neutral",
+    "css": ".theme.scss",
+    "baseColor": "zinc",
     "cssVariables": true,
     "prefix": ""
   },
   "aliases": {
-    "components": "@/src",
+    "components": "@/components",
     "utils": "@/lib/utils",
-    "ui": "@/src",
+    "ui": "@/components",
     "lib": "@/lib",
     "hooks": "@/hooks"
-  }
+  },
+  "iconLibrary": "lucide"
 }

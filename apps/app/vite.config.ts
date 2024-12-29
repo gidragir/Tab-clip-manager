@@ -1,7 +1,7 @@
 /** @type {import('vite').UserConfig} */
 
 import { defineConfig } from "vite";
-import defaultConfigs from "@repo/vite-config";
+import defaultConfigs from "@repo/configs/vite.config";
 
 import path from "path";
 

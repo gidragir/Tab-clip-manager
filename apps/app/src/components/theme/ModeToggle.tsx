@@ -1,12 +1,12 @@
 import { Moon, Sun } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@repo/ui/components/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@repo/ui/components/dropdown-menu"
 import { emit } from "@tauri-apps/api/event"
 
 type Theme = "dark" | "light" | "system"

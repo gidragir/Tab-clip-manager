@@ -1,8 +1,14 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
+import tailwindcssAnimate from "tailwindcss-animate"
 
-// We want each package to be responsible for its own content.
 const config: Omit<Config, "content"> = {
   darkMode: ["class"],
+  content: [
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}",
+    "../../packages/ui/components/*.{ts,tsx}",
+    "./src/windows/**/*.{html,tsx}", "./src/components/**/*.tsx"
+  ],
   theme: {
     extend: {
       colors: {
@@ -71,6 +77,7 @@ const config: Omit<Config, "content"> = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")]
-};
-export default config;
+  plugins: [tailwindcssAnimate],
+} satisfies Config
+
+export default config
