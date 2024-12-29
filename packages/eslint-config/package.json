@@ -4,6 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "eslint-config-turbo": "^2.0.0"
+    "eslint-config-turbo": "^2.3.3"
   }
 }
