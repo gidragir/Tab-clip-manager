@@ -1,5 +1,5 @@
 import { load } from "@tauri-apps/plugin-store"
-import "@/style/App.scss"
+import "@style/App.scss"
 import { Button } from "@repo/ui/components/button"
 import { Label } from "@repo/ui/components/label"
 import { Info, Ellipsis } from "lucide-react"

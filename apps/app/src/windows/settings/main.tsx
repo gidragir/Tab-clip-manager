@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import App from "@/windows/settings/App"
-import { ThemeProvider } from "@/components/theme/ThemeProvider"
+import App from "@windows/settings/App"
+import { ThemeProvider } from "@components/theme/ThemeProvider"
 import "@repo/ui/theme"
 
 
