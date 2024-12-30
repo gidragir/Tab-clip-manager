@@ -6,27 +6,27 @@ use tauri_plugin_global_shortcut::{
 
 #[cfg(desktop)]
 pub fn add_shortcuts(app: &mut App) -> Result<(), Error> {
-    app.handle().plugin(
-        tauri_plugin_global_shortcut::Builder::new()
-            .with_handler(move |_app, shortcut, event| {
-                main_shortcut_handler(_app, shortcut, event);
-                copy_shortcut_handler(_app, shortcut, event);
-                cut_shortcut_handler(_app, shortcut, event);
-                paste_shortcut_handler(_app, shortcut, event);
-            })
-            .build(),
-    )?;
+    // app.handle().plugin(
+    //     tauri_plugin_global_shortcut::Builder::new()
+    //         .with_handler(move |_app, shortcut, event| {
+    //             main_shortcut_handler(_app, shortcut, event);
+    //             copy_shortcut_handler(_app, shortcut, event);
+    //             cut_shortcut_handler(_app, shortcut, event);
+    //             paste_shortcut_handler(_app, shortcut, event);
+    //         })
+    //         .build(),
+    // )?;
 
-    let shortcuts = [
-        main_shortcut(),
-        copy_shortcut(),
-        cut_shortcut(),
-        paste_shortcut(),
-    ];
+    // let shortcuts = [
+    //     main_shortcut(),
+    //     copy_shortcut(),
+    //     cut_shortcut(),
+    //     paste_shortcut(),
+    // ];
 
-    for shortcut in shortcuts {
-        add_shortcut(app, shortcut);
-    }
+    // for shortcut in shortcuts {
+    //     add_shortcut(app, shortcut);
+    // }
     Ok(())
 }
 

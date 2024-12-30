@@ -34,13 +34,13 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies for wiki
-        working-directory: ./workspaces/wiki
+        working-directory: ./apps/docs
         run: pnpm install
 
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
-          path: ./workspaces/wiki
+          path: ./apps/docs
           package-manager: pnpm@latest
 
   deploy:
