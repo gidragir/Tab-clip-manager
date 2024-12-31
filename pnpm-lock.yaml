@@ -38,12 +38,6 @@ importers:
       '@tauri-apps/plugin-store':
         specifier: ^2.2.0
         version: 2.2.0
-      class-variance-authority:
-        specifier: ^0.7.1
-        version: 0.7.1
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       lucide-react:
         specifier: ^0.469.0
         version: 0.469.0(react@19.0.0)
@@ -78,12 +72,6 @@ importers:
       eslint:
         specifier: ^9.17.0
         version: 9.17.0(jiti@1.21.7)
-      eslint-config-prettier:
-        specifier: ^9.1.0
-        version: 9.1.0(eslint@9.17.0(jiti@1.21.7))
-      eslint-plugin-react-hooks:
-        specifier: ^5.1.0
-        version: 5.1.0(eslint@9.17.0(jiti@1.21.7))
       path:
         specifier: ^0.12.7
         version: 0.12.7
@@ -170,12 +158,18 @@ importers:
       '@types/node':
         specifier: ^22.10.2
         version: 22.10.2
+      eslint-config-prettier:
+        specifier: ^9.1.0
+        version: 9.1.0(eslint@9.17.0(jiti@1.21.7))
       eslint-config-turbo:
         specifier: ^2.3.3
         version: 2.3.3(eslint@9.17.0(jiti@1.21.7))
       eslint-plugin-react:
         specifier: ^7.37.3
         version: 7.37.3(eslint@9.17.0(jiti@1.21.7))
+      eslint-plugin-react-hooks:
+        specifier: ^5.1.0
+        version: 5.1.0(eslint@9.17.0(jiti@1.21.7))
       globals:
         specifier: ^15.14.0
         version: 15.14.0

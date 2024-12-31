@@ -1,19 +1,19 @@
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun } from 'lucide-react'
 
-import { Button } from "@repo/ui/components/button"
+import { Button } from '@repo/ui/components/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@repo/ui/components/dropdown-menu"
-import { emit } from "@tauri-apps/api/event"
+} from '@repo/ui/components/dropdown-menu'
+import { emit } from '@tauri-apps/api/event'
 
-type Theme = "dark" | "light" | "system"
+type Theme = 'dark' | 'light' | 'system'
 
 export function ModeToggle() {
   const toggleTheme = (newTheme: Theme) => {
-    emit("theme-changed", { theme: newTheme })
+    emit('theme-changed', { theme: newTheme })
   }
 
   return (
@@ -26,13 +26,13 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => toggleTheme("light")}>
+        <DropdownMenuItem onClick={() => toggleTheme('light')}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => toggleTheme("dark")}>
+        <DropdownMenuItem onClick={() => toggleTheme('dark')}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => toggleTheme("system")}>
+        <DropdownMenuItem onClick={() => toggleTheme('system')}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>

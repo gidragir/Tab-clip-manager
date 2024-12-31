@@ -12,6 +12,7 @@
       "persistent": true
     },
     "lint": {},
+    "prettier": {},
     "test": {
       "cache": true,
       "inputs": ["$TURBO_DEFAULT$", ".env*"],

@@ -1,8 +1,7 @@
-import { createContext, useEffect, useState } from "react"
-import { listen } from "@tauri-apps/api/event"
+import { createContext, useEffect, useState } from 'react'
+import { listen } from '@tauri-apps/api/event'
 
-
-type Theme = "dark" | "light" | "system"
+type Theme = 'dark' | 'light' | 'system'
 
 type ThemeProviderProps = {
   children: React.ReactNode
@@ -16,7 +15,7 @@ type ThemeProviderState = {
 }
 
 const initialState: ThemeProviderState = {
-  theme: "system",
+  theme: 'system',
   setTheme: () => null,
 }
 
@@ -24,11 +23,10 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
-  storageKey = "vite-ui-theme",
+  defaultTheme = 'system',
+  storageKey = 'vite-ui-theme',
   ...props
 }: ThemeProviderProps) {
-
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )
@@ -36,14 +34,14 @@ export function ThemeProvider({
   useEffect(() => {
     const root = window.document.documentElement
 
-    root.classList.remove("light", "dark")
+    root.classList.remove('light', 'dark')
 
     let newTheme = theme
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+    if (theme === 'system') {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
         .matches
-        ? "dark"
-        : "light"
+        ? 'dark'
+        : 'light'
       newTheme = systemTheme
     }
 
@@ -59,8 +57,7 @@ export function ThemeProvider({
     },
   }
 
-  
-  listen<ThemeProviderState>("theme-changed", (e) => {   
+  listen<ThemeProviderState>('theme-changed', (e) => {
     setTheme(e.payload.theme)
   })
 

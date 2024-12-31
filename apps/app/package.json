@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
@@ -16,32 +17,28 @@
     "@tauri-apps/plugin-global-shortcut": "~2.2.0",
     "@tauri-apps/plugin-shell": "^2.2.0",
     "@tauri-apps/plugin-store": "^2.2.0",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
     "lucide-react": "^0.469.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "eslint": "^9.17.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
+    "autoprefixer": "^10.4.20",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitejs/plugin-react-swc": "^3.7.2",
-    "autoprefixer": "^10.4.20",
     "path": "^0.12.7",
     "postcss": "^8.4.49",
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^13.0.1",
     "prettier": "^3.4.2",
     "sass-embedded": "^1.83.0",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss": "^3.4.17",
-    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.7.2",
     "vite": "^6.0.6",
     "vite-tsconfig-paths": "^5.1.4"

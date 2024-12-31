@@ -23,13 +23,11 @@
     width: 305px;
     height: 400px;
     padding: 0 10px;
-
   }
   .tab {
     box-shadow: var(--shadow) !important;
   }
   .clip-elements {
-
     &::-webkit-scrollbar {
       display: none;
     }

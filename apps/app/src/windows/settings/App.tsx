@@ -1,7 +1,7 @@
-import "@style/App.scss"
-import { ModeToggle } from "@components/theme/ModeToggle"
-import { SidebarProvider } from "@repo/ui/components/sidebar.tsx"
-import { Home, Keyboard } from "lucide-react"
+import '@style/App.scss'
+import { ModeToggle } from '@components/theme/ModeToggle'
+import { SidebarProvider } from '@repo/ui/components/sidebar.tsx'
+import { Home, Keyboard } from 'lucide-react'
 import {
   Sidebar,
   SidebarContent,
@@ -10,23 +10,22 @@ import {
   SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem
-} from "@repo/ui/components/sidebar.tsx"
+  SidebarMenuItem,
+} from '@repo/ui/components/sidebar.tsx'
 
 // Menu items.
 const items = [
   {
-    title: "Home",
-    url: "#",
+    title: 'Home',
+    url: '#',
     icon: Home,
   },
   {
-    title: "Hotkeys",
-    url: "#",
+    title: 'Hotkeys',
+    url: '#',
     icon: Keyboard,
   },
 ]
-
 
 export default function App() {
   return (
@@ -37,7 +36,7 @@ export default function App() {
             <SidebarGroupLabel>Tab clip manager</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-              <ModeToggle />
+                <ModeToggle />
                 {items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
