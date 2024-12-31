@@ -11,18 +11,11 @@
       "cache": false,
       "persistent": true
     },
+    "lint": {},
     "test": {
       "cache": true,
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["coverage/**"]
-    },
-    "//#tauri-dev": {
-      "persistent": true
-    },
-    "//#tauri-build": {
-      "dependsOn": ["webview#build"]
-    },
-    "//#lint": {},
-    "//#lint:fix": {}
+    }
   }
 }
