@@ -1,3 +1,5 @@
+use std::{borrow::Borrow, fmt::Pointer};
+
 use tauri::{App, AppHandle, Error, Manager};
 use tauri_plugin_clipboard_manager::ClipboardExt;
 use tauri_plugin_global_shortcut::{
@@ -6,27 +8,27 @@ use tauri_plugin_global_shortcut::{
 
 #[cfg(desktop)]
 pub fn add_shortcuts(app: &mut App) -> Result<(), Error> {
-    // app.handle().plugin(
-    //     tauri_plugin_global_shortcut::Builder::new()
-    //         .with_handler(move |_app, shortcut, event| {
-    //             main_shortcut_handler(_app, shortcut, event);
-    //             copy_shortcut_handler(_app, shortcut, event);
-    //             cut_shortcut_handler(_app, shortcut, event);
-    //             paste_shortcut_handler(_app, shortcut, event);
-    //         })
-    //         .build(),
-    // )?;
+    app.handle().plugin(
+        tauri_plugin_global_shortcut::Builder::new()
+            .with_handler(move |_app, shortcut, event| {
+                main_shortcut_handler(_app, shortcut, event);
+                copy_shortcut_handler(_app, shortcut, event);
+                cut_shortcut_handler(_app, shortcut, event);
+                paste_shortcut_handler(_app, shortcut, event);
+            })
+            .build(),
+    )?;
 
-    // let shortcuts = [
-    //     main_shortcut(),
-    //     copy_shortcut(),
-    //     cut_shortcut(),
-    //     paste_shortcut(),
-    // ];
+    let shortcuts = [
+        main_shortcut(),
+        copy_shortcut(),
+        cut_shortcut(),
+        paste_shortcut(),
+    ];
 
-    // for shortcut in shortcuts {
-    //     add_shortcut(app, shortcut);
-    // }
+    for shortcut in shortcuts {
+        add_shortcut(app, shortcut);
+    }
     Ok(())
 }
 
@@ -69,10 +71,7 @@ fn copy_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event: ShortcutEv
     }
     match event.state() {
         ShortcutState::Pressed => {}
-        ShortcutState::Released => {
-            let content = app.clipboard().read_text();
-            println!("{:?}", content.unwrap());
-        }
+        ShortcutState::Released => {}
     }
 }
 
@@ -96,8 +95,9 @@ fn paste_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event: ShortcutE
     match event.state() {
         ShortcutState::Pressed => {}
         ShortcutState::Released => {
-            let content = app.clipboard().read_text();
-            println!("{:?}", content.unwrap());
+            // let clipboard = app.clipboard();
+            // let content = clipboard.read_text();
+            // clipboard.write_text(content)
         }
     }
 }

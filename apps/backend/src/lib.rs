@@ -1,4 +1,4 @@
-use tauri::{Manager, WindowEvent};
+use tauri::{self, Emitter};
 mod shortcuts;
 mod tray_menu;
 
@@ -13,15 +13,22 @@ pub fn run() {
             Ok(())
         })
         .on_menu_event(|app, event| tray_menu::on_menu_event(app, event))
-        .on_window_event(|window, event|
-            match event {
-                WindowEvent::CloseRequested { api, .. } => {
-                    window.hide().unwrap();
-                    api.prevent_close();
-                }
-                _ => {}
+        .on_window_event(|window, event| match event {
+            tauri::WindowEvent::CloseRequested { api, .. } => {
+                window.hide().unwrap();
+                api.prevent_close();
             }
-        )
+            tauri::WindowEvent::Focused(focused) => {
+                if window.label() == "Tab_Clip_Manager_main" {
+                    if *focused {
+                        window.emit("window_open", ()).unwrap();
+                    } else {
+                        window.hide().unwrap();
+                    }
+                }
+            }
+            _ => {}
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

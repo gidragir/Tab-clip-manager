@@ -8,9 +8,9 @@ import {
   DropdownMenuTrigger,
 } from '@repo/ui/components/dropdown-menu'
 
-const ClipElement = ({ element, key }: { element: string; key: number }) => {
+const ClipElement = ({ element }: { element: string }) => {
   return (
-    <DropdownMenu key={key}>
+    <DropdownMenu>
       <div className="flex flex-row transition-all rounded-sm bg-bg_clip clip-element hover:shadow-sm hover:shadow-slate-500">
         <Label>{element}</Label>
 

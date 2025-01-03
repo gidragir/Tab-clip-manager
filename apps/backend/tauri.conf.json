@@ -18,6 +18,7 @@
         "resizable": false,
         "alwaysOnTop": true,
         "visible": false,
+        "decorations": false,
         "url": "../src/windows/main/index.html"
       },
       {
@@ -27,6 +28,7 @@
         "width": 400,
         "height": 500,
         "center": true,
+        "alwaysOnTop": true,
         "visible": false,
         "url": "../src/windows/settings/index.html"
       }

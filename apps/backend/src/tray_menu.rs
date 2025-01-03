@@ -1,5 +1,4 @@
 use tauri::{
-    window::Window,
     menu::{Menu, MenuEvent, MenuItem},
     tray::TrayIconBuilder,
     App, AppHandle, Error, Manager,
@@ -24,9 +23,10 @@ pub fn setup_tray_menu(app: &mut App) -> Result<(), Error> {
 pub fn on_menu_event(app: &AppHandle, event: MenuEvent) {
     match event.id.as_ref() {
         "open" => {
-            let window = app.get_webview_window("Tab_Clip_Manager_main").unwrap();
-            let _ = &window.show();
-            let _ = &window.set_focus();
+            app.get_webview_window("Tab_Clip_Manager_main")
+                .unwrap()
+                .show()
+                .unwrap();
         }
         "hide" => {
             app.get_webview_window("Tab_Clip_Manager_main")
@@ -35,9 +35,10 @@ pub fn on_menu_event(app: &AppHandle, event: MenuEvent) {
                 .unwrap();
         }
         "settings" => {
-            let window = app.get_webview_window("Tab_Clip_Manager_settings").unwrap();
-            let _ = &window.show();
-            let _ = &window.set_focus();
+            app.get_webview_window("Tab_Clip_Manager_settings")
+                .unwrap()
+                .show()
+                .unwrap();
         }
         "quit" => {
             app.exit(0);
