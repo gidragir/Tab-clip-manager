@@ -17,6 +17,7 @@
         "height": 400,
         "resizable": false,
         "alwaysOnTop": true,
+        "visible": false,
         "url": "../src/windows/main/index.html"
       },
       {
@@ -26,6 +27,7 @@
         "width": 400,
         "height": 500,
         "center": true,
+        "visible": false,
         "url": "../src/windows/settings/index.html"
       }
     ],

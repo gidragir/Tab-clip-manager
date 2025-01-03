@@ -1,4 +1,5 @@
 use tauri::{
+    window::Window,
     menu::{Menu, MenuEvent, MenuItem},
     tray::TrayIconBuilder,
     App, AppHandle, Error, Manager,
@@ -15,7 +16,7 @@ pub fn setup_tray_menu(app: &mut App) -> Result<(), Error> {
     let _tray = TrayIconBuilder::new()
         .icon(app.default_window_icon().unwrap().clone())
         .menu(&menu)
-        .menu_on_left_click(true)
+        .show_menu_on_left_click(true)
         .build(app)?;
     Ok(())
 }

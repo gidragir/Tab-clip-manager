@@ -1,7 +1,5 @@
 import '@style/App.scss'
 
-import { Info } from 'lucide-react'
-
 import { useState } from 'react'
 
 import { ClipTab } from '@repo/types'
@@ -9,6 +7,8 @@ import { ClipTab } from '@repo/types'
 import ClipElements from '@components/ClipElements'
 import ClipTabs from '@components/ClipTabs'
 import useElementsStore from '@hooks/useElementsStore'
+
+import { Info } from 'lucide-react'
 
 export default function App() {
   const { getClipElements } = useElementsStore()
@@ -19,8 +19,7 @@ export default function App() {
     { name: 'emails', svg: Info },
   ]
 
-  const [activeTab, setActiveTab] = useState(tabs[0].name)
-
+  const [activeTab, setActiveTab] = useState<string>("")
   const [elements, setElements] = useState<string[]>([])
 
   const handleTabChange = async (tabName: string) => {
