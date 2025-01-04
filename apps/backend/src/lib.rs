@@ -6,7 +6,6 @@ mod tray_menu;
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_clipboard_manager::init())
-        .plugin(tauri_plugin_store::Builder::new().build())
         .setup(|app| {
             tray_menu::setup_tray_menu(app)?;
             shortcuts::add_shortcuts(app)?;

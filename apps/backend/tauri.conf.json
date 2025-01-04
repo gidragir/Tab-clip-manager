@@ -11,6 +11,7 @@
     "windows": [
       {
         "label": "Tab_Clip_Manager_main",
+        "title": "Tab Clip Manager",
         "focus": true,
         "transparent": true,
         "width": 305,

@@ -8,8 +8,6 @@
   ],
   "permissions": [
     "core:default",
-    "shell:allow-open",
-    "core:event:allow-listen",
-    "store:default"
+    "core:event:allow-listen"
   ]
 }
