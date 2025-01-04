@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "tauri dev"
+    "dev": "tauri dev",
+    "cargo:add": "cargo add",
+    "cargo:remove": "cargo remove"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.1.0"

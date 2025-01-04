@@ -5,7 +5,12 @@
     "dev": "turbo dev",
     "lint": "turbo run lint",
     "prettier": "turbo run prettier",
-    "updep": "pnpm update --latest & pnpm install"
+    "updep": "pnpm update --latest & pnpm install",
+    "frontend:add": "pnpm --filter frontend run pnpm:add",
+    "frontend:remove": "pnpm --filter frontend run pnpm:remove",
+    "backend:add": "pnpm --filter backend run cargo:add",
+    "backend:remove": "pnpm --filter backend run cargo:remove",
+    "package:ui:add": "pnpm --filter @repo/ui run shadcn:add"
   },
   "devDependencies": {
     "turbo": "^2.3.3"

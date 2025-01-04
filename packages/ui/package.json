@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "lint": "eslint . --fix",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "shadcn:add": "pnpm dlx shadcn@latest add"
   },
   "exports": {
     "./index.css": "./src/index.css",
