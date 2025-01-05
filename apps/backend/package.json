@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tauri dev",
+    "main": "pwsh -NoExit -Command \"cd (git rev-parse --show-toplevel)\"",
     "cargo:add": "cargo add",
     "cargo:remove": "cargo remove"
   },

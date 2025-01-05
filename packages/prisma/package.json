@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "nvm": "nvm use lts",
+    "main": "pwsh -NoExit -Command \"cd (git rev-parse --show-toplevel) && pnpm nvm\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -6,8 +6,12 @@
     "lint": "turbo run lint",
     "prettier": "turbo run prettier",
     "updep": "pnpm update --latest & pnpm install",
+    "nvm": "nvm use latest",
+    "prisma": "pwsh -NoExit ./switch.ps1 -Key prisma",
+    "frontend": "pwsh -NoExit ./switch.ps1 -Key frontend",
     "frontend:add": "pnpm --filter frontend run pnpm:add",
     "frontend:remove": "pnpm --filter frontend run pnpm:remove",
+    "backend": "pwsh -NoExit ./switch.ps1 -Key backend",
     "backend:add": "pnpm --filter backend run cargo:add",
     "backend:remove": "pnpm --filter backend run cargo:remove",
     "package:ui:add": "pnpm --filter @repo/ui run shadcn:add"
