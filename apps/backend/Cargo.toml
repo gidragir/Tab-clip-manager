@@ -20,7 +20,7 @@ tauri = { version = "2.2.0", features = ["tray-icon"] }
 tauri-plugin-clipboard-manager = "2.2.0"
 serde = { version = "1.0.217", features = ["derive"] }
 serde_json = "1.0.135"
-prisma_cli = "0.1.0"
+prisma_cli = "0.0.1"
 prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.11" }
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
