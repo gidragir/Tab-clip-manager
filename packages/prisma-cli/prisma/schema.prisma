@@ -2,10 +2,16 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "cargo prisma"
+  output   = "../src/prisma.rs"
 }
 
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model ClipElements {
+  id   Int    @id @default(autoincrement())
+  data String @unique
 }

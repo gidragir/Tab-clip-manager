@@ -1,0 +1,12 @@
+{
+  "name": "@repo/prisma-cli",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "migrate": "cargo prisma migrate dev --name init",
+    "main": "pwsh -NoExit -Command \"cd (git rev-parse --show-toplevel)\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

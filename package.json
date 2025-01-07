@@ -7,7 +7,7 @@
     "prettier": "turbo run prettier",
     "updep": "pnpm update --latest & pnpm install",
     "nvm": "nvm use latest",
-    "prisma": "pwsh -NoExit ./switch.ps1 -Key prisma",
+    "orm": "pwsh -NoExit ./switch.ps1 -Key orm",
     "frontend": "pwsh -NoExit ./switch.ps1 -Key frontend",
     "frontend:add": "pnpm --filter frontend run pnpm:add",
     "frontend:remove": "pnpm --filter frontend run pnpm:remove",

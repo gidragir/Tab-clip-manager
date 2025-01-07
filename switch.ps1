@@ -6,7 +6,7 @@ param(
 $scripts = @{
   "frontend" = "cd ./apps/frontend/"
   "backend" = "cd ./apps/backend/"
-  "prisma" = "cd ./packages/prisma/ && pnpm nvm"
+  "orm" = "cd ./packages/orm/"
 }
 if ($scripts.ContainsKey($Key)) {
     Invoke-Expression $scripts[$Key]
