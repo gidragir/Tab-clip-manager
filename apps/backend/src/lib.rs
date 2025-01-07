@@ -2,6 +2,9 @@ use tauri::{self, Emitter};
 mod shortcuts;
 mod tray_menu;
 
+
+use prisma_cli;
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
