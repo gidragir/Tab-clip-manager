@@ -1,27 +1,8 @@
-[package]
-name = "tab-clip-manager"
-version = "0.1.0"
-description = "Tab clip manager"
-authors = ["Ilya Balter"]
-edition = "2021"
+[workspace]
+members = ["prisma-cli", "tauri"]
+resolver = "2"
 
-[lib]
-name = "tab_clip_manager_lib"
-crate-type = ["staticlib", "cdylib", "rlib"]
-
-[patch.crates-io]
-prisma_cli = { path = "../../packages/prisma_cli" }
-
-[build-dependencies]
-tauri-build = { version = "2.0.4", features = [] }
-
-[dependencies]
-tauri = { version = "2.2.0", features = ["tray-icon"] }
-tauri-plugin-clipboard-manager = "2.2.0"
+[workspace.dependencies]
 serde = { version = "1.0.217", features = ["derive"] }
 serde_json = "1.0.135"
-prisma_cli = "0.0.1"
-prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.11" }
-
-[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
-tauri-plugin-global-shortcut = "2.2.0"
+prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.11", default-features = false, features = ["sqlite", "migrations"] }
