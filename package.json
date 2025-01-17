@@ -3,8 +3,6 @@
   "packageManager": "pnpm@9.15.2",
   "scripts": {
     "dev": "turbo dev",
-    "lint": "turbo run lint",
-    "prettier": "turbo run prettier",
     "updep": "pnpm update --latest & pnpm install",
     "nvm": "nvm use latest",
     "lint-format": "turbo run --parallel lint format ",
