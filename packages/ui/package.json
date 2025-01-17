@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint": "eslint . --fix",
-    "prettier": "prettier --write .",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "shadcn:add": "pnpm dlx shadcn@latest add"
   },
   "exports": {
