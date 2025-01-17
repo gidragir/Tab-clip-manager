@@ -1,6 +1,7 @@
 max_width = 100
 
 edition = "2024"
+style_edition = "2024"
 
 disable_all_formatting = false
 
@@ -9,9 +10,11 @@ control_brace_style = "AlwaysSameLine"
 
 tab_spaces = 4
 hard_tabs = false
+use_small_heuristics = "Max"
 
 format_strings = true
 wrap_comments = true
 
 imports_granularity = "Crate"
 group_imports = "StdExternalCrate"
+use_field_init_shorthand = true
