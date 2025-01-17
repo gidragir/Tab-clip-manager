@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "lint": "eslint . --fix",
-    "prettier": "prettier --write .",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "main": "pwsh -NoExit -Command \"cd (git rev-parse --show-toplevel)\"",
     "pnpm:add": "pnpm add",
     "pnpm:remove": "pnpm remove"
