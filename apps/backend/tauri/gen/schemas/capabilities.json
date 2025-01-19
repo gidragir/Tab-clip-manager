@@ -1,16 +1,1 @@
-{
-  "desktop-capability": {
-    "identifier": "desktop-capability",
-    "description": "",
-    "local": true,
-    "permissions": ["global-shortcut:default"],
-    "platforms": ["macOS", "windows", "linux"]
-  },
-  "main": {
-    "identifier": "main",
-    "description": "Capability for the main window",
-    "local": true,
-    "windows": ["Tab_Clip_Manager_main", "Tab_Clip_Manager_settings"],
-    "permissions": ["core:default", "core:event:allow-listen"]
-  }
-}
+{"desktop-capability":{"identifier":"desktop-capability","description":"","local":true,"permissions":["global-shortcut:default"],"platforms":["macOS","windows","linux"]},"main":{"identifier":"main","description":"Capability for the main window","local":true,"windows":["Tab_Clip_Manager_main","Tab_Clip_Manager_settings"],"permissions":["core:default","core:event:allow-listen"]}}
