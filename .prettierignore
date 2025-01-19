@@ -6,14 +6,19 @@ out/
 src-tauri/target/
 src-tauri/tauri.conf.json
 
-.pnp.cjs
-.pnp.loader.mjs
 pnpm-lock.yaml
-yarn.lock
-package-lock.json
 **/*.lock
 
-# Исключаем статические ассеты
+.turbo
+
+.gitignore
+.github
+.eslintignore
+.nvmrc
+.prettierignore
+LICENSE
+
+
 public/
 static/
 **/*.png
