@@ -1,2 +1,2 @@
-target/
-tauri/gen/
+/target/
+/tauri/gen/
