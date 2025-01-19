@@ -16,7 +16,8 @@
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
     "format": "prettier --check --cache .",
-    "format:fix": "prettier --write --cache ."
+    "format:fix": "prettier --write --cache .",
+    "lint-format:fix": "turbo run --parallel lint:fix format:fix"
   },
   "devDependencies": {
     "prettier": "^3.4.2",

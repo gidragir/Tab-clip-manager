@@ -14,16 +14,18 @@
     "updep": {},
     "lint": {},
     "lint:fix": {},
+    "format": {},
+    "format:fix": {},
+    "//#format": {
+      "inputs": ["!.git/**", "!node_modules/**", "!packages/**"]
+    },
+    "//#format:fix": {
+      "inputs": ["!.git/**", "!node_modules/**", "!.turbo/**"]
+    },
     "test": {
       "cache": true,
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["coverage/**"]
     }
-  },
-  "globalDependencies": [
-    ".eslintignore",
-    ".prettierignore",
-    "tsconfig.base.json",
-    "tsconfig.json"
-  ]
+  }
 }

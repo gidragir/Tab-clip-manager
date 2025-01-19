@@ -9,6 +9,7 @@ export default function useElementsStore() {
   const getClipElements = async (
     tabName: string
   ): Promise<string[] | undefined> => {
+    console.log(tabName)
     return undefined
   }
   return { getClipElements }
