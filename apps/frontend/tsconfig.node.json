@@ -1,5 +1,5 @@
 {
-  "extends": "@repo/configs/typescript.node.config",
+  "extends": "@repo/tsconfig/base.config.json",
   "compilerOptions": {
     "composite": true,
     "baseUrl": ".",

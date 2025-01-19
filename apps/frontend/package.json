@@ -8,7 +8,9 @@
     "main": "pwsh -NoExit -Command \"cd (git rev-parse --show-toplevel)\"",
     "updep": "pnpm update --latest & pnpm install",
     "pnpm:add": "pnpm add",
-    "pnpm:remove": "pnpm remove"
+    "pnpm:remove": "pnpm remove",
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm lint --fix"
   },
   "dependencies": {
     "@repo/configs": "workspace:*",
@@ -22,6 +24,10 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@repo/linter": "workspace:*",
+    "eslint": "^9.18.0",
+    "jiti": "^2.4.2",
+    "@repo/tsconfig": "workspace:*",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
     "@types/node": "^22.10.6",
     "@types/react": "^19.0.6",

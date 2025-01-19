@@ -2,18 +2,6 @@
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
   "tasks": {
-    "//#lint": {
-      "inputs": ["!.git/**", "!node_modules/**", "!packages/**"]
-    },
-    "//#lint:fix": {
-      "inputs": ["!.git/**", "!node_modules/**", "!packages/**"]
-    },
-    "//#format": {
-      "inputs": ["!.git/**", "!node_modules/**", "!packages/**"]
-    },
-    "//#format:fix": {
-      "inputs": ["!.git/**", "!node_modules/**", "!packages/**"]
-    },
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
@@ -26,8 +14,6 @@
     "updep": {},
     "lint": {},
     "lint:fix": {},
-    "format": {},
-    "format:fix": {},
     "test": {
       "cache": true,
       "inputs": ["$TURBO_DEFAULT$", ".env*"],

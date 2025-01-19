@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "updep": "pnpm update --latest & pnpm install",
-    "shadcn:add": "pnpm dlx shadcn@latest add"
+    "shadcn:add": "pnpm dlx shadcn@latest add",
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm lint --fix"
   },
   "exports": {
     "./index.css": "./src/index.css",
@@ -32,6 +34,10 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@repo/linter": "workspace:*",
+    "eslint": "^9.18.0",
+    "jiti": "^2.4.2",
+    "@repo/tsconfig": "workspace:*",
     "@repo/configs": "workspace:*",
     "@turbo/gen": "2.3.3",
     "@types/node": "22.10.6",

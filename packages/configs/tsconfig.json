@@ -1,4 +1,7 @@
 {
-  "extends": "./typescript.json",
+  "extends": "@repo/tsconfig/base.config.json",
+  "compilerOptions": {
+    "esModuleInterop": true
+  },
   "include": ["."]
 }
