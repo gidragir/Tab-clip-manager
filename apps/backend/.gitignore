@@ -1,3 +1,6 @@
 /target/
 /tauri/gen/
 /tauri/src/prisma.rs
+
+*.db*
+migrations

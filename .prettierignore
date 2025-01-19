@@ -1,10 +1,7 @@
 node_modules/
 dist/
-build/
-out/
-
-src-tauri/target/
-src-tauri/tauri.conf.json
+target/
+gen/
 
 pnpm-lock.yaml
 **/*.lock
@@ -12,13 +9,15 @@ pnpm-lock.yaml
 .turbo
 .eslintcache
 
+.prettierrc
+*d.ts
+
 .gitignore
 .github
 .eslintignore
 .nvmrc
 .prettierignore
 LICENSE
-
 
 public/
 static/

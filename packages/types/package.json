@@ -6,17 +6,11 @@
   "main": "index.ts",
   "types": "index.ts",
   "scripts": {
-    "updep": "pnpm update --latest & pnpm install",
-    "lint": "eslint --cache .",
-    "lint:fix": "pnpm lint --fix",
-    "format": "prettier --check --cache .",
-    "format:fix": "prettier --write --cache ."
+    "updep": "pnpm update --latest & pnpm install"
   },
   "devDependencies": {
     "@repo/configs": "workspace:*",
-    "eslint": "^9.18.0",
     "lucide-react": "^0.471.1",
-    "prettier": "^3.4.2",
     "typescript": "^5.7.3"
   }
 }

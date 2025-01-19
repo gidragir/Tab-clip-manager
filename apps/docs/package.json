@@ -19,8 +19,6 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "prettier": "^3.4.2",
-    "eslint": "^9.18.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "postcss-nesting": "^13.0.1",
