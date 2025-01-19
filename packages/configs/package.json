@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint": "eslint . --ext .js,.ts",
+    "updep": "pnpm update --latest & pnpm install",
+    "lint": "eslint --cache .",
     "lint:fix": "pnpm lint --fix",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write .",
-    "updep": "pnpm update --latest & pnpm install"
+    "format": "prettier --check --cache .",
+    "format:fix": "prettier --write --cache ."
   },
   "exports": {
     "./tailwind.config": "./tailwind.config.ts",

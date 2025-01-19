@@ -4,12 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint": "eslint . --ext .js,.ts",
-    "lint:fix": "pnpm lint --fix",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write .",
     "updep": "pnpm update --latest & pnpm install",
-    "shadcn:add": "pnpm dlx shadcn@latest add"
+    "shadcn:add": "pnpm dlx shadcn@latest add",
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --check --cache .",
+    "format:fix": "prettier --write --cache ."
   },
   "exports": {
     "./index.css": "./src/index.css",

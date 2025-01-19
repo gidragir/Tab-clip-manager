@@ -5,14 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "lint": "eslint . --ext .js,.ts",
-    "lint:fix": "pnpm lint --fix",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write .",
     "main": "pwsh -NoExit -Command \"cd (git rev-parse --show-toplevel)\"",
     "updep": "pnpm update --latest & pnpm install",
     "pnpm:add": "pnpm add",
-    "pnpm:remove": "pnpm remove"
+    "pnpm:remove": "pnpm remove",
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --check --cache .",
+    "format:fix": "prettier --write --cache ."
   },
   "dependencies": {
     "@repo/configs": "workspace:*",

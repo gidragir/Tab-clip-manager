@@ -2,6 +2,7 @@ dist/
 .astro/
 
 .turbo
+.eslintcache
 
 node_modules/
 

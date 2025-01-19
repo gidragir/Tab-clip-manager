@@ -2,7 +2,7 @@ import '@style/App.scss'
 
 import { useEffect, useState } from 'react'
 import { listen } from '@tauri-apps/api/event'
-import { invoke } from "@tauri-apps/api/core"
+import { invoke } from '@tauri-apps/api/core'
 import { ClipTab } from '@repo/types'
 
 import ClipElements from '@components/ClipElements'
@@ -19,15 +19,15 @@ const tabs: ClipTab[] = [
 ]
 
 async function setData(newData: string) {
-  await invoke("set_data", { newData })
-  console.log("Data updated!")
+  await invoke('set_data', { newData })
+  console.log('Data updated!')
 }
 
-setData("Hello, Tauri!")
+setData('Hello, Tauri!')
 
 async function getData() {
-  const data = await invoke("get_recent")
-  console.log("Current data:", data)
+  const data = await invoke('get_recent')
+  console.log('Current data:', data)
 }
 
 getData()
@@ -35,7 +35,7 @@ getData()
 export default function App() {
   const { getClipElements } = useElementsStore()
 
-  const [activeTab, setActiveTab] = useState<string>("")
+  const [activeTab, setActiveTab] = useState<string>('')
   const [elements, setElements] = useState<string[]>([])
 
   const handleTabChange = async (tabName: string) => {
@@ -52,7 +52,6 @@ export default function App() {
       event.then((unlisten) => unlisten())
     }
   })
-
 
   return (
     <main className="container flex flex-col content-center text-center rounded-sm bg-bg_main">
