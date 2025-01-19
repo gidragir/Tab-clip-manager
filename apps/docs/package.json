@@ -9,7 +9,11 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "updep": "pnpm update --latest & pnpm install",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

@@ -6,8 +6,10 @@
   "main": "index.ts",
   "types": "index.ts",
   "scripts": {
-    "lint": "eslint . --fix",
-    "prettier": "prettier --write .",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "updep": "pnpm update --latest & pnpm install"
   },
   "devDependencies": {
