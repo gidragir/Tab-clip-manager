@@ -1,4 +1,6 @@
-use tauri::{self, Emitter};
+use std::sync::Mutex;
+
+use tauri::{self, Emitter, State};
 mod shortcuts;
 mod tray_menu;
 
@@ -7,9 +9,27 @@ mod prisma;
 
 use prisma::PrismaClient;
 
+#[derive(Default)]
+struct RecentClipElements {
+    data: Mutex<String>,
+}
+
+#[tauri::command]
+fn get_recent(state: State<RecentClipElements>) -> String{
+    let data = state.data.lock().unwrap();
+    data.clone()
+}
+#[tauri::command]
+fn set_data(state: State<RecentClipElements>, new_data: String) {
+    let mut data = state.data.lock().unwrap();
+    *data = new_data;
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub async fn run() {
     tauri::Builder::default()
+        .manage(RecentClipElements::default())
+        .invoke_handler(tauri::generate_handler![get_recent, set_data])
         .plugin(tauri_plugin_clipboard_manager::init())
         .setup(|app| {
             tray_menu::setup_tray_menu(app)?;

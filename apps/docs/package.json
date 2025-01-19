@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "updep": "pnpm update --latest & pnpm install",
     "astro": "astro"
   },
   "dependencies": {

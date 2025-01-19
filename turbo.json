@@ -11,6 +11,7 @@
       "cache": false,
       "persistent": true
     },
+    "updep": {},
     "lint": {},
     "prettier": {},
     "test": {
