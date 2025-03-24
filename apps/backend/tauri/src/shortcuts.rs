@@ -1,12 +1,12 @@
-use tauri::{App, AppHandle, Error, Manager};
+use tauri::{AppHandle, Error, Manager};
 // use tauri_plugin_clipboard_manager::ClipboardExt;
 use tauri_plugin_global_shortcut::{
     Code, GlobalShortcutExt, Modifiers, Shortcut, ShortcutEvent, ShortcutState,
 };
 
 #[cfg(desktop)]
-pub fn add_shortcuts(app: &mut App) -> Result<(), Error> {
-    app.handle().plugin(
+pub fn add_shortcuts(app: &AppHandle) -> Result<(), Error> {
+    app.plugin(
         tauri_plugin_global_shortcut::Builder::new()
             .with_handler(move |_app, shortcut, event| {
                 main_shortcut_handler(_app, shortcut, event);
@@ -102,6 +102,6 @@ fn main_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event: ShortcutEv
 // }
 // endregion
 
-fn add_shortcut(app: &mut App, shortcut: Shortcut) {
+fn add_shortcut(app: &AppHandle, shortcut: Shortcut) {
     let _ = app.global_shortcut().register(shortcut);
 }

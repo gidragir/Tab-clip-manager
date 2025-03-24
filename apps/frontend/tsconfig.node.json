@@ -6,7 +6,7 @@
     "paths": {
       "@*": ["./src/*"],
       "@repo/ui/*": ["../../packages/ui/*"],
-      "@repo/ui/theme": ["../../packages/ui/theme.scss"]
+      "@repo/ui/theme": ["../../packages/ui/theme.css"]
     }
   },
   "include": ["vite.config.ts"]

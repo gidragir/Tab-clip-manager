@@ -3,5 +3,5 @@
 
 #[tokio::main]
 async fn main() {
-    tab_clip_manager_lib::run().await;
+    let _ = tab_clip_manager_lib::run().await;
 }

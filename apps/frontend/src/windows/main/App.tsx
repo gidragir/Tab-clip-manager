@@ -1,4 +1,4 @@
-import '@style/App.scss'
+import '@style/App.css'
 
 import { useEffect, useState } from 'react'
 import { listen } from '@tauri-apps/api/event'
@@ -18,19 +18,17 @@ const tabs: ClipTab[] = [
   { name: 'emails', svg: Info },
 ]
 
-async function setData(newData: string) {
-  await invoke('set_data', { newData })
-  console.log('Data updated!')
-}
+// async function setData(newData: string) {
+//   await invoke('set_data', { newData })
+//   console.log('Data updated!')
+// }
 
-setData('Hello, Tauri!')
+// setData('Hello, Tauri!')
 
 async function getData() {
-  const data = await invoke('get_recent')
+  const data = await invoke('get_recent_clipboard_entries')
   console.log('Current data:', data)
 }
-
-getData()
 
 export default function App() {
   const { getClipElements } = useElementsStore()
@@ -42,6 +40,7 @@ export default function App() {
     setActiveTab(tabName)
     const newElements = await getClipElements(tabName)
     setElements(newElements || [])
+    getData()
   }
 
   useEffect(() => {

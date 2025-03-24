@@ -1,4 +1,4 @@
-import '@style/App.scss'
+import '@style/App.css'
 import { ModeToggle } from '@components/theme/ModeToggle'
 import { SidebarProvider } from '@repo/ui/components/sidebar.tsx'
 import { Home, Keyboard } from 'lucide-react'

@@ -1,8 +1,9 @@
 {
   "private": true,
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@10.6.2",
   "scripts": {
     "dev": "turbo dev",
+    "ui:dev": "pnpm --filter frontend run dev",
     "updep": "pnpm update --latest & pnpm install",
     "nvm": "nvm use latest",
     "orm": "pwsh -NoExit ./switch.ps1 -Key orm",
@@ -20,7 +21,7 @@
     "lint-format:fix": "turbo run --parallel lint:fix format:fix"
   },
   "devDependencies": {
-    "prettier": "^3.4.2",
-    "turbo": "^2.3.3"
+    "prettier": "^3.5.3",
+    "turbo": "^2.4.4"
   }
 }

@@ -3,20 +3,20 @@ members = ["prisma-cli", "tauri"]
 resolver = "2"
 
 [workspace.dependencies]
-serde = { version = "1.0.217", features = ["derive"] }
-serde_json = "1.0.135"
+serde = { version = "1.0.219", default-features = false, features = ["derive"] }
+serde_json = { version = "1.0.140", default-features = false }
 prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.11", default-features = false, features = ["sqlite", "migrations"] }
 
 
 [profile.dev]
-opt-level = 0
+opt-level = "z"
 debug = true
-split-debuginfo = '...'  # Platform-specific.
-strip = "none"
+split-debuginfo = "unpacked"
 debug-assertions = true
 overflow-checks = true
-lto = false
-panic = 'unwind'
+lto = true
+strip = true
+panic = "abort"
 incremental = true
 codegen-units = 256
 rpath = false
@@ -24,7 +24,7 @@ rpath = false
 [profile.release]
 opt-level = 3
 debug = false
-split-debuginfo = '...'  # Platform-specific.
+split-debuginfo = "unpacked"
 strip = "none"
 debug-assertions = false
 overflow-checks = false

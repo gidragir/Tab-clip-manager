@@ -1,10 +1,10 @@
 use tauri::{
     menu::{Menu, MenuEvent, MenuItem},
     tray::TrayIconBuilder,
-    App, AppHandle, Error, Manager,
+    AppHandle, Error, Manager,
 };
 
-pub fn setup_tray_menu(app: &mut App) -> Result<(), Error> {
+pub fn setup_tray_menu(app: &AppHandle) -> Result<(), Error> {
     let open = MenuItem::with_id(app, "open", "Open", true, None::<&str>)?;
     let hide = MenuItem::with_id(app, "hide", "Hide", true, None::<&str>)?;
     let settings = MenuItem::with_id(app, "settings", "Settings", true, None::<&str>)?;
