@@ -50,9 +50,7 @@ pub fn run() {
                     if *focused {
                         window.emit("window_open", ()).unwrap();
                     } else {
-                        if let Err(e) = window.hide() {
-                            eprintln!("Failed to hide window: {:?}", e);
-                        }
+                        window.hide().unwrap();
                     }
                 }
             }
