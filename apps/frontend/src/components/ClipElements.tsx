@@ -2,7 +2,7 @@ import ClipElement from '@components/ClipElement'
 
 const ClipElements = ({ elements }: { elements: string[] | undefined }) => {
   return (
-    <div className="flex flex-col mt-2 overflow-y-auto clip-elements text-start">
+    <div className="clip-elements">
       {Array.isArray(elements)
         ? elements.map((element, index) => (
             <ClipElement element={element} key={index} />

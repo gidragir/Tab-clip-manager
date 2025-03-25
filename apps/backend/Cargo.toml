@@ -9,16 +9,16 @@ prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust
 
 
 [profile.dev]
-opt-level = "z"
+opt-level = 0
 debug = true
 split-debuginfo = "unpacked"
 debug-assertions = true
 overflow-checks = true
-lto = true
-strip = true
+lto = false
+strip = false
 panic = "abort"
 incremental = true
-codegen-units = 256
+codegen-units = 16
 rpath = false
 
 [profile.release]

@@ -56,16 +56,21 @@ fn main_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event: ShortcutEv
     match event.state() {
         ShortcutState::Pressed => {}
         ShortcutState::Released => {
-            app.get_webview_window("Tab_Clip_Manager_main")
-                .unwrap()
-                .show()
-                .unwrap();
+            app.get_webview_window("Tab_Clip_Manager_main").and_then(|window| {
+                window
+                    .show()
+                    .map_err(|e| {
+                        eprintln!("Failed to show window: {:?}", e);
+                        e
+                    })
+                    .ok()
+            });
         }
     }
 }
 
-// fn copy_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event: ShortcutEvent) {
-//     if shortcut != &copy_shortcut() {
+// fn copy_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event:
+// ShortcutEvent) {     if shortcut != &copy_shortcut() {
 //         return;
 //     }
 //     match event.state() {
@@ -74,8 +79,8 @@ fn main_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event: ShortcutEv
 //     }
 // }
 
-// fn cut_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event: ShortcutEvent) {
-//     if shortcut != &cut_shortcut() {
+// fn cut_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event:
+// ShortcutEvent) {     if shortcut != &cut_shortcut() {
 //         return;
 //     }
 //     match event.state() {
@@ -87,8 +92,8 @@ fn main_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event: ShortcutEv
 //     }
 // }
 
-// fn paste_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event: ShortcutEvent) {
-//     if shortcut != &paste_shortcut() {
+// fn paste_shortcut_handler(app: &AppHandle, shortcut: &Shortcut, event:
+// ShortcutEvent) {     if shortcut != &paste_shortcut() {
 //         return;
 //     }
 //     match event.state() {

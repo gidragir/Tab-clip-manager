@@ -11,7 +11,7 @@ import {
 const ClipElement = ({ element }: { element: string }) => {
   return (
     <DropdownMenu>
-      <div className="flex flex-row transition-all rounded-sm bg-bg_clip clip-element hover:shadow-sm hover:shadow-slate-500">
+      <div className="clip-element">
         <Label>{element}</Label>
 
         <DropdownMenuTrigger asChild>

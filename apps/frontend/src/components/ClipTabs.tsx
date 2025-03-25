@@ -14,7 +14,7 @@ const ClipTabs = ({ tabs, activeTab, handleTabChange }: Props) => {
     <div className="sticky flex flex-row gap-5 pb-2 justify-evenly top-1">
       {tabs.map((tab, index) => (
         <Button
-          className={`tab ${activeTab === tab.name ? 'bg-white' : 'bg_clip'}`}
+          className={`rounded-sm shadow-(--shadow) ${activeTab === tab.name ? 'bg-white' : 'bg-clip-background'}`}
           variant="outline"
           size={'icon'}
           key={index}

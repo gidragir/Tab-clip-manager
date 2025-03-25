@@ -1,33 +1,33 @@
 @import "tailwindcss";
+@import "../../../../packages/ui/theme.css";
+@layer components {
+  .container {
+    box-shadow: var(--shadow);
+    width: 305px;
+    height: 400px;
+    padding: 0 10px;
+  }
+  .clip-elements {
+    @apply display-flex-col w-auto mt-2 overflow-y-auto text-start;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
-:root {
-  color: var(--text-color);
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  border-radius: 8px;
-}
-.container {
-  box-shadow: var(--shadow);
-  width: 305px;
-  height: 400px;
-  padding: 0 10px;
-}
-.tab {
-  box-shadow: var(--shadow) !important;
-}
-.clip-elements {
-  &::-webkit-scrollbar {
-    display: none;
+  .clip-element {
+    @apply display-flex-row transition-all rounded-sm bg-clip-background pt-2.5 px-6 pb-9 mt-0.5 mx-0.5 mb-3.5 hover:shadow-sm hover:shadow-slate-500;
+    /* INFO: min-width 300px, min-height 380px */
+    /* INFO: max-width 310px, max-height 385px */
+
+    &> * {
+      @apply bg-clip-background;
+    }
   }
 }
 
-.clip-element {
-  box-shadow: var(--shadow);
-  width: auto;
-  margin: 1px 1px 14px;
-  padding: 10px 8px 35px;
-  /* INFO: min-width 300px, min-height 380px */
-  /* INFO: max-width 310px, max-height 385px */
+@utility display-flex-col {
+  @apply flex flex-col;
+}
+@utility display-flex-row {
+  @apply flex flex-row;
 }

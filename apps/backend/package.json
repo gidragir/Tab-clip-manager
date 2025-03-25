@@ -11,6 +11,6 @@
     "cargo:remove": "cargo remove"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "2.3.1"
+    "@tauri-apps/cli": "2.4.0"
   }
 }

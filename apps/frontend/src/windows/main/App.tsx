@@ -2,7 +2,6 @@ import '@style/App.css'
 
 import { useEffect, useState } from 'react'
 import { listen } from '@tauri-apps/api/event'
-import { invoke } from '@tauri-apps/api/core'
 import { ClipTab } from '@repo/types'
 
 import ClipElements from '@components/ClipElements'
@@ -12,7 +11,7 @@ import useElementsStore from '@hooks/useElementsStore'
 import { Info } from 'lucide-react'
 
 const tabs: ClipTab[] = [
-  { name: 'main', svg: Info },
+  { name: 'recent', svg: Info },
   { name: 'passwords', svg: Info },
   { name: 'logins', svg: Info },
   { name: 'emails', svg: Info },
@@ -25,11 +24,6 @@ const tabs: ClipTab[] = [
 
 // setData('Hello, Tauri!')
 
-async function getData() {
-  const data = await invoke('get_recent_clipboard_entries')
-  console.log('Current data:', data)
-}
-
 export default function App() {
   const { getClipElements } = useElementsStore()
 
@@ -40,7 +34,7 @@ export default function App() {
     setActiveTab(tabName)
     const newElements = await getClipElements(tabName)
     setElements(newElements || [])
-    getData()
+
   }
 
   useEffect(() => {
@@ -53,7 +47,7 @@ export default function App() {
   })
 
   return (
-    <main className="container flex flex-col content-center text-center rounded-sm bg-bg_main">
+    <main className="container content-center text-center rounded-sm display-flex-col background-main">
       <ClipTabs
         tabs={tabs}
         activeTab={activeTab}
