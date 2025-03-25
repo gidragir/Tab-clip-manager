@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "../../../../packages/ui/theme.css";
+@import 'tailwindcss';
+@import '../../../../packages/ui/theme.css';
 @layer components {
   .container {
     box-shadow: var(--shadow);
@@ -15,11 +15,11 @@
   }
 
   .clip-element {
-    @apply display-flex-row transition-all rounded-sm bg-clip-background pt-2.5 px-6 pb-9 mt-0.5 mx-0.5 mb-3.5 hover:shadow-sm hover:shadow-slate-500;
+    @apply display-flex-row transition-all rounded-sm bg-clip-background pt-2.5 px-6 pb-9 mt-0.5 mx-0.5 mb-3.5 hover:shadow-sm hover:shadow-slate-500 cursor-default select-none;
     /* INFO: min-width 300px, min-height 380px */
     /* INFO: max-width 310px, max-height 385px */
 
-    &> * {
+    & > * {
       @apply bg-clip-background;
     }
   }

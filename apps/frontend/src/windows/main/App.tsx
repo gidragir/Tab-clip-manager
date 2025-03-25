@@ -1,12 +1,14 @@
 import '@style/App.css'
 
-import { useEffect, useState } from 'react'
-import { listen } from '@tauri-apps/api/event'
+import { useState } from 'react'
+
 import { ClipTab } from '@repo/types'
 
 import ClipElements from '@components/ClipElements'
 import ClipTabs from '@components/ClipTabs'
 import useElementsStore from '@hooks/useElementsStore'
+import useWindowOpenListener from '@hooks/useWindowOpenListener'
+import useEscapeKeyListener from '@hooks/useEscapeKeyListener'
 
 import { Info } from 'lucide-react'
 
@@ -27,24 +29,17 @@ const tabs: ClipTab[] = [
 export default function App() {
   const { getClipElements } = useElementsStore()
 
-  const [activeTab, setActiveTab] = useState<string>('')
+  const [activeTab, setActiveTab] = useState<string>('recent')
   const [elements, setElements] = useState<string[]>([])
 
   const handleTabChange = async (tabName: string) => {
     setActiveTab(tabName)
     const newElements = await getClipElements(tabName)
     setElements(newElements || [])
-
   }
 
-  useEffect(() => {
-    const event = listen<string>('window_open', async () => {
-      handleTabChange(tabs[0].name)
-    })
-    return () => {
-      event.then((unlisten) => unlisten())
-    }
-  })
+  useWindowOpenListener(handleTabChange)
+  useEscapeKeyListener()
 
   return (
     <main className="container content-center text-center rounded-sm display-flex-col background-main">
