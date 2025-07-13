@@ -6,16 +6,15 @@
   "main": "index.ts",
   "types": "index.ts",
   "scripts": {
-    "updep": "pnpm update --latest & pnpm install",
     "lint": "eslint --cache .",
     "lint:fix": "pnpm lint --fix"
   },
   "devDependencies": {
     "@repo/linter": "workspace:*",
-    "eslint": "9.22.0",
-    "jiti": "^2.4.2",
     "@repo/tsconfig": "workspace:*",
-    "lucide-react": "0.479.0",
-    "typescript": "5.8.2"
+    "eslint": "9.31.0",
+    "jiti": "^2.4.2",
+    "lucide-react": "0.525.0",
+    "typescript": "5.8.3"
   }
 }

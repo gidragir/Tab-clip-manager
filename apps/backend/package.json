@@ -6,11 +6,10 @@
   "scripts": {
     "dev": "tauri dev",
     "main": "pwsh -NoExit -Command \"cd (git rev-parse --show-toplevel)\"",
-    "updep": "pnpm update --latest & pnpm install",
     "cargo:add": "cargo add",
     "cargo:remove": "cargo remove"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "2.4.0"
+    "@tauri-apps/cli": "2.6.2"
   }
 }
